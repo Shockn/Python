@@ -34,10 +34,16 @@ ocupado em disco, de bytes para megabytes deverá ser feita através de uma fun�
 que será chamada pelo programa principal. O cálculo do percentual de uso também deverá ser 
 feito através de uma função, que será chamada pelo programa principal. '''
 
+#FUNÇÃO QUE CONVERTE BYTES PRA MEGABYTES
 def conMB(bts):
     mB=bts/1024**2
     return(mB)
 
+
+
+
+
+#FUNÇÃO QUE CALCULA A PORCENTAGEM DE USO
 def percent(x):
     arq=open('/home/yuri/Área de Trabalho/Git/Gituri/Python/Exercício de Lista ACME/usuarios.txt', 'r')
     
@@ -49,26 +55,46 @@ def percent(x):
     
     arq.close()
     
-    arq=open('/home/yuri/Área de Trabalho/Git/Gituri/Python/Exercício de Lista ACME/usuarios.txt', 'r')
+    arq2=open('/home/yuri/Área de Trabalho/Git/Gituri/Python/Exercício de Lista ACME/usuarios.txt', 'r')
 
-    for j in arq:
+    for j in arq2:
         nome, y=j.split()
         y=float(y)
-        print(y)
         xcons=(y*100)/total
         return(xcons)
 
+
+
+
+
+
+
+#LENDO OS DADOS DO ARQUIVO 1 E ESCREVENDO NO ARQUIVO 2
 f=open('/home/yuri/Área de Trabalho/Git/Gituri/Python/Exercício de Lista ACME/usuarios.txt', 'r')
 f2=open('/home/yuri/Área de Trabalho/Git/Gituri/Python/Exercício de Lista ACME/relatorio.txt', 'w')
 
+#ESCREVE O 'CABEÇALHO'
 f2.write('ACME Inc.             Uso do espaço em disco pelos usuários\n')
 f2.write('----------------------------------------------------------------\n')
 f2.write('Nr.     Usuário              Espaço Utilizado            % do uso\n')
 
+#ESCREVE AS LINHAS COM CADA UMA DAS INFORMAÇÕES PEDIDAS
 num=0
 for i in f:
     num+=1
     nome, cons=i.split()
     cons=float(cons)
-    f2.write('{:1d}       {:1s}           {:1.2f} MB         {:1.2f}%\n'.format(num, nome.ljust(10), conMB(cons), percent(cons)))
+    f2.write('{:1d}       {:1s}           {:1.2f} MB {:1s}    {:1.2f}%\n'.format(num, nome.ljust(10), conMB(cons),str('             ').ljust(15) , percent(cons)))
 
+
+
+
+
+
+#FECHA OS ARQUIVOS
+f.close()
+f.close()
+
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+                #'Ainda falta ajeitar a parte da % de uso.'
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
