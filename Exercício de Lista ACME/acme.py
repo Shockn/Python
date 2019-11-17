@@ -93,7 +93,7 @@ for i in f:
 
 #FECHA OS ARQUIVOS
 f.close()
-f.close()
+f2.close()
 
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
                 #'Ainda falta ajeitar a parte da % de uso.'
