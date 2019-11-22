@@ -39,6 +39,7 @@ def multMatriz(m1, m2):
         return(True, m3)
     else:
         return(False, 'Não foi possível multiplicar as matrizes.')
+
 #CHAMA AS FUNÇÕES
 a, b=matGen()
 result, c=multMatriz(a, b)
