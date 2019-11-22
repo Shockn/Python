@@ -42,7 +42,7 @@ def conMB(bts):
 
 #FUNÇÃO QUE CALCULA O TOTAL
 def totalUso():
-    arq=open('/home/ime/Área de Trabalho/yuri/Exercício de Lista ACME/usuarios.txt', 'r')
+    arq=open(r"C:\Users\pedro\Documents\GitHub\Python\Exercício de Lista ACME\usuarios.txt", 'r')
     
     total=0
     for i in arq:
@@ -56,7 +56,7 @@ total=totalUso()
 
 
 #ESCREVENDO NO ARQUIVO 2
-f2=open('/home/ime/Área de Trabalho/yuri/Exercício de Lista ACME/relatorio.txt', 'w')
+f2=open(r"C:\Users\pedro\Documents\GitHub\Python\Exercício de Lista ACME\relatorio.txt", 'w')
 
 #ESCREVE O 'CABEÇALHO'
 f2.write('ACME Inc.             Uso do espaço em disco pelos usuários\n')
@@ -65,7 +65,7 @@ f2.write('Nr.     Usuário              Espaço Utilizado            % do uso\n'
 
 #ESCREVE AS LINHAS COM CADA UMA DAS INFORMAÇÕES PEDIDAS
 num=0
-f=open('/home/ime/Área de Trabalho/yuri/Exercício de Lista ACME/usuarios.txt', 'r')
+f=open(r"C:\Users\pedro\Documents\GitHub\Python\Exercício de Lista ACME\usuarios.txt", 'r')
 for i in f:
     num+=1
     nome, cons=i.split()
